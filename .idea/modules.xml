@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dubbo_zk_cosumer/dubbo_zk_cosumer.iml" filepath="$PROJECT_DIR$/dubbo_zk_cosumer/dubbo_zk_cosumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_zk_interface/dubbo_zk_interface.iml" filepath="$PROJECT_DIR$/dubbo_zk_interface/dubbo_zk_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_zk_model/dubbo_zk_model.iml" filepath="$PROJECT_DIR$/dubbo_zk_model/dubbo_zk_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_zk_provider/dubbo_zk_provider.iml" filepath="$PROJECT_DIR$/dubbo_zk_provider/dubbo_zk_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_zk_ssm.iml" filepath="$PROJECT_DIR$/dubbo_zk_ssm.iml" />
+    </modules>
+  </component>
+</project>
