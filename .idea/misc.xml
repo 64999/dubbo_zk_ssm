@@ -15,7 +15,7 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ZooKeeperConfig">
-    <option name="host" value="192.168.111.160" />
+    <option name="host" value="127.0.01" />
     <option name="port" value="2181" />
     <option name="charset" value="UTF-8" />
     <option name="whitePaths" value="/" />

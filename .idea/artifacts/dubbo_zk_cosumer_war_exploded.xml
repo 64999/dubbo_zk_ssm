@@ -33,7 +33,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.35" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:0.2.23" />
-          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.41" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.31" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.12" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.6" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.2" />
@@ -61,6 +61,10 @@
           <element id="library" level="project" name="Maven: org.apache.curator:curator-framework:2.7.1" />
           <element id="library" level="project" name="Maven: org.apache.curator:curator-client:2.7.1" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:16.0.1" />
+          <element id="library" level="project" name="Maven: cglib:cglib:3.2.6" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:6.0" />
+          <element id="library" level="project" name="Maven: org.apache.ant:ant:1.9.6" />
+          <element id="library" level="project" name="Maven: org.apache.ant:ant-launcher:1.9.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

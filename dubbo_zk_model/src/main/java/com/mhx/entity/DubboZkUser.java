@@ -1,6 +1,8 @@
 package com.mhx.entity;
 
-public class DubboZkUser {
+import java.io.Serializable;
+
+public class DubboZkUser implements Serializable{
     private Integer id;
 
     private String name;

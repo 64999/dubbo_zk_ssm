@@ -8,7 +8,7 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="dubbo_zk_consumer" owner="user" organization="dubbox"  />
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry check="false" address="zookeeper://127.0.0.1:2181" />
+    <dubbo:registry address="zookeeper://192.168.111.160:2181" protocol="zookeeper"/>
     <!-- 使用dubbo协议调用定义好的api接口 -->
     <dubbo:consumer check="false"/>
     <!-- 使用dubbo协议调用定义好的api接口 -->

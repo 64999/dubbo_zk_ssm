@@ -1,14 +1,15 @@
 package com.mhx.serviceImpl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.mhx.dao.DubboZkUserMapper;
 import com.mhx.entity.DubboZkUser;
 import com.mhx.service.DubboZkService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
-@Service
+@Service(interfaceClass = DubboZkService.class)
 public class DubboZkServiceImpl implements DubboZkService{
 
     @Autowired

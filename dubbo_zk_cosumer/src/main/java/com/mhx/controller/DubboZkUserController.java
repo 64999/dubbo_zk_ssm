@@ -1,9 +1,11 @@
 package com.mhx.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.mhx.entity.DubboZkUser;
 import com.mhx.service.DubboZkService;
 import com.mhx.serviceImpl.DubboZkServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +21,19 @@ public class DubboZkUserController {
 
     private String prefix = "user/";
 
-    @Autowired(required = false)
-    private DubboZkServiceImpl dubboZkService;
+    @Autowired
+    private DubboZkService dubboZkServiceImpl;
+
+
+
+    @Reference
 
     public static void main(String[] args) {
-        DubboZkServiceImpl dubboZkService = new DubboZkServiceImpl();
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dubbo.xml");
+        context.start();
+        DubboZkService dubboZkService = (DubboZkService) context.getBean("dubboZkService");
         List<DubboZkUser> list = dubboZkService.selectBySelective();
+        System.err.println("name:"+list.get(0).getName());
     }
     /**
      *
@@ -38,8 +47,8 @@ public class DubboZkUserController {
      */
     @RequestMapping(value="/getAllUser")
     public String getAllUser(ModelMap modelMap,DubboZkUser userModel){
-        List<DubboZkUser> list = dubboZkService.selectBySelective();
-        System.out.println(list.size());
+        List<DubboZkUser> list = dubboZkServiceImpl.selectBySelective();
+
         modelMap.put("userModelList", list);
         return prefix + "user_list";
     }
@@ -47,7 +56,7 @@ public class DubboZkUserController {
     @RequestMapping(value="/getUserDetailForm")
     public String getUserDetailForm(ModelMap modelMap, Integer id){
         if (id != null){
-            modelMap.put("userModel", dubboZkService.selectByPrimaryKey(id));
+            modelMap.put("userModel", dubboZkServiceImpl.selectByPrimaryKey(id));
         }
         return prefix + "user_detail";
     }
@@ -55,7 +64,7 @@ public class DubboZkUserController {
 
     @RequestMapping(value="/addUser")
     public String addUser(DubboZkUser userModel){
-        dubboZkService.insert(userModel);
+        dubboZkServiceImpl.insert(userModel);
         return "redirect:getAllUser";
     }
 
@@ -63,7 +72,7 @@ public class DubboZkUserController {
     @ResponseBody
     public boolean deleteUser(@RequestParam(value = "ids[]") Integer[] ids){
         for (int i = 0;i < ids.length;i++){
-            dubboZkService.deleteByPrimaryKey(ids[i]);
+            dubboZkServiceImpl.deleteByPrimaryKey(ids[i]);
         }
         return true;
     }
